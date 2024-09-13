@@ -1,0 +1,15 @@
+nano install_apache.yml
+//edited the install_apache.yml to add Installing of Apache Package
+ansible-playbook --ask-become-pass install_apache.yml
+//entered SUDO pass
+//opened the IP address on the browser
+mv install_apache.yml panginstall
+cat panginstall
+mv panginstall install_apache.yml
+nano install_apache.yml
+//edited the install_apache.yml to add Update Repository Index
+ansible playbook --ask-become-pass install_apache.yml
+//entered SUDO Pass
+nano install_apache.yml
+//edited the install_apache.yml to add PHP support
+ansible playbook --ask-become-pass install_apache.yml
