@@ -3,20 +3,10 @@
   become: true
   tasks:
 
-  - name: install apache2 and php packages for Ubuntu
-    apt:
-      name:
-        - "{{ apache_package }}"
-        - "{{ php_package }}"
-      state: latest
-      update_cache: yes
-    when: ansible_distribution == "Ubuntu"
-
-  - name: install apache and php packages for CentOS
-    dnf:
-      name: 
-        - "{{ httpd_package }}"
-        - "{{ php_package }}"
-      state: latest
-      update_cache: yes
-    when: ansible_distribution == "CentOS"
+   - name: install apache2 and php
+     package:
+       name:
+         - "{{ apache_package }}"
+         - "{{ php_package }}"
+       state: latest
+       update_cache: yes
