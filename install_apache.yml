@@ -15,8 +15,8 @@
   - name: install apache and php packages for CentOS
     dnf:
       name: 
-        - httpd
-        - php
+        - "{{ httpd_package }}"
+        - "{{ php_package }}"
       state: latest
       update_cache: yes
     when: ansible_distribution == "CentOS"
