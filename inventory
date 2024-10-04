@@ -1,13 +1,24 @@
-[controlnode]
+#[controlnode]
 #192.168.56.129
 
-[server2]
-#192.168.56.127
+[web_servers]
+192.168.56.130
+#server1
+192.168.56.132
+#centos9 server
 
-[servers]
+[db_servers]
+192.168.56.127
+#server2
+
+[file_servers]
+192.168.56.133
+#server3
+
+#[servers]
 #ubuntu in laptop
 #danielle@workstation
-192.168.56.102 apache_package=apache2 php_package=libapache2-mod-php
+#192.168.56.102 apache_package=apache2 php_package=libapache2-mod-php
 #centos in laptop
 #yenabejar@localhost
-192.168.56.103 httpd_package=httpd php_package=php
+#192.168.56.103 httpd_package=httpd php_package=php
