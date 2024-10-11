@@ -4,13 +4,13 @@
   gather_facts: true
   pre_tasks:
 
-  - name: install updates (CentOS)
-    tags: always
-    dnf:
-      name: "*"
-      update_only: true
-      update_cache: true
-    when: ansible_distribution == "CentOS"
+#  - name: install updates (CentOS)
+#    tags: always
+#    dnf:
+#      name: "*"
+#      update_only: true
+#      update_cache: true
+#    when: ansible_distribution == "CentOS"
 
   - name: install updates (Ubuntu)
     tags: always
