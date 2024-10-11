@@ -3,9 +3,8 @@
 
 [web_servers]
 192.168.56.130
-#server1
 192.168.56.132
-#centos9 server
+#server1 and centos9 server
 
 [db_servers]
 192.168.56.127
