@@ -1,13 +1,15 @@
 ---
 - hosts: all
   become: true
+  gather_facts: true
   pre_tasks:
 
   - name: install updates (CentOS)
     tags: always
     dnf:
       name: "*"
-      state: latest
+      update_only: true
+      update_cache: true
     when: ansible_distribution == "CentOS"
 
   - name: install updates (Ubuntu)
@@ -17,11 +19,19 @@
       state: latest
     when: ansible_distribution == "Ubuntu"
 
-
 - hosts: web_servers
   become: true
   gather_facts: true
   tasks:
+
+  - name: copy default html file for site
+    tags: apache, apache2, httpd
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: 0644
 
   - name: Install apache and php for Ubuntu servers
     tags: apache,apache2,ubuntu
